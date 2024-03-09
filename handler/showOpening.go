@@ -14,6 +14,7 @@ func ShowOpeningHandler(ctx *gin.Context) {
 		sendError(ctx, http.StatusBadRequest, errParamIsRequired("id", "queryParameter").Error())
 		return
 	}
+	
 	opening := schemas.Opening{}
 
 	if err := db.First(&opening, id).Error; err != nil {
