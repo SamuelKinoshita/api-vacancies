@@ -17,16 +17,4 @@ func Initialize() {
 		fmt.Println("Error starting server:", err)
 		return
 	}
-
-	//Tambem posso fazer assim nativamente
-	// http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
-	// 	fmt.Fprintf(w, "pong")
-	//   })
-
-	//   err := http.ListenAndServe(":9000", nil)
-	//   if err != nil {
-	// 	fmt.Println("Error starting server:", err)
-	// 	return
-	//   }
-
 }

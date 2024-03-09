@@ -1,37 +1,47 @@
 package handler
 
 import (
-	"net/http"
+	"backend_go/config"
 
-	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
-func CreateOpeningHandler(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "Post Open",
-	})
+var (
+	logger *config.Logger
+	db     *gorm.DB
+)
+
+func InitializeHandle() {
+	logger = config.GetLooger("handler")
+	db = config.GetSQlite()
 }
 
-func ShowOpeningHandler(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "GET Open",
-	})
-}
+// func CreateOpeningHandler(ctx *gin.Context) {
+// 	ctx.JSON(http.StatusOK, gin.H{
+// 		"msg": "Post Open",
+// 	})
+// }
 
-func DeleteOpeningHandler(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "GET Open",
-	})
-}
+// func ShowOpeningHandler(ctx *gin.Context) {
+// 	ctx.JSON(http.StatusOK, gin.H{
+// 		"msg": "GET Open",
+// 	})
+// }
 
-func UpdateOpeningHandler(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "GET Open",
-	})
-}
+// func DeleteOpeningHandler(ctx *gin.Context) {
+// 	ctx.JSON(http.StatusOK, gin.H{
+// 		"msg": "GET Open",
+// 	})
+// }
 
-func ListOpeningsHandler(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "GET Open",
-	})
-}
+// func UpdateOpeningHandler(ctx *gin.Context) {
+// 	ctx.JSON(http.StatusOK, gin.H{
+// 		"msg": "GET Open",
+// 	})
+// }
+
+// func ListOpeningsHandler(ctx *gin.Context) {
+// 	ctx.JSON(http.StatusOK, gin.H{
+// 		"msg": "GET Open",
+// 	})
+// }

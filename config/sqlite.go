@@ -10,6 +10,7 @@ import (
 
 func InitializeSQLite() (*gorm.DB, error) {
 	logger := GetLooger("sqllite")
+
 	dbPath := "./db/main.db"
 
 	//Usamos isso para conferrir se ja existe
